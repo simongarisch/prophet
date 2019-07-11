@@ -17,8 +17,12 @@ import os
 
 import mock
 
-MOCK_MODULES = ['numpy', 'pandas', 'pandas.io',
-'prophet.utils.tradingcalendar']
+MOCK_MODULES = [
+    'numpy', 'pandas', 'pandas.io',
+    'prophet.utils.tradingcalendar', 'scipy',
+    'matplotlib', 'pandas_datareader'
+]
+
 for mod_name in MOCK_MODULES:
     sys.modules[mod_name] = mock.Mock()
 
@@ -123,6 +127,7 @@ html_sidebars = {
 html_static_path = ['_static']
 html_theme_options = {
     'logo': 'img/logo.png',
+    'description': 'Sponsored by <a href="https://wokflow.com">Wokflow</a>',
     'github_user': 'Emsu',
     'github_repo': 'prophet',
     'github_button': True,
